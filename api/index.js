@@ -10,7 +10,8 @@ import path from 'path';
 
 dotenv.config();
 
-mongoose
+const run = async()=>{
+ await mongoose
   .connect(process.env.MONGO)
   .then(() => {
     console.log('MongoDb is connected');
@@ -18,6 +19,8 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+}
+run();
 
 const __dirname = path.resolve();
 
